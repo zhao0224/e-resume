@@ -61,7 +61,7 @@
           <div class="jobs">
               <div class="jobs_job">
                   <h2 class="text-secondary">IT Support Technician</h2>
-                  <h3>Department of National Defense, Ottawa</h3>
+                  <h3>Department of National Defence, Ottawa</h3>
                   <h5>05/2021-12/2021</h5><br><br>
                   <li>Troubleshoot and provided technical support to clients in a professional and timely manner</li></br>
                   <li>Monitored job queues and prioritized pending tickets by using Axios Systems “Assyst” ITSM software program</li></br>
@@ -110,7 +110,36 @@
             <footer>&copy; Copyright 2022</footer>
         </section>
     </main>
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const hamburger = document.querySelector('.menu-btn_burger');
+        const nav = document.querySelector('.nav');
+        const menuNav = document.querySelector('.menu-nav');
+        const navItems = document.querySelectorAll('.menu-nav_item');
+
+        let showMenu = false;
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            if (!showMenu) {
+                hamburger.classList.add('open');
+                nav.classList.add('open');
+                menuNav.classList.add('open');
+                navItems.forEach(item => item.classList.add('open'));
+                showMenu = true;
+            } else {
+                hamburger.classList.remove('open');
+                nav.classList.remove('open');
+                menuNav.classList.remove('open');
+                navItems.forEach(item => item.classList.remove('open'));
+                showMenu = false;
+            }
+
+        }
+    </script>
+
     <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
-    <script src="/dist/js/main.js"></script>
+    
 </body>
 </html>
