@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="dist/css/main.css">
     <title>My Portfolio</title>
 </head>
+
 <body>
     <header>
         <div class="menu-btn">
@@ -41,12 +43,12 @@
 
     <main>
         <section class="home">
-        
+
             <h1 class="home_name">
                 Jing <span class="home_name--last">Zhao</span>
             </h1>
             <h2>
-               Web Developer ⦁ Programmer 
+                Web Developer ⦁ Programmer
             </h2>
 
             <div class="social-icons">
@@ -64,7 +66,38 @@
             <footer>&copy; Copyright 2022</footer>
         </section>
     </main>
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const hamburger = document.querySelector('.menu-btn_burger');
+        const nav = document.querySelector('.nav');
+        const menuNav = document.querySelector('.menu-nav');
+        const navItems = document.querySelectorAll('.menu-nav_item');
+
+        let showMenu = false;
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            if (!showMenu) {
+                hamburger.classList.add('open');
+                nav.classList.add('open');
+                menuNav.classList.add('open');
+                navItems.forEach(item => item.classList.add('open'));
+                showMenu = true;
+            } else {
+                hamburger.classList.remove('open');
+                nav.classList.remove('open');
+                menuNav.classList.remove('open');
+                navItems.forEach(item => item.classList.remove('open'));
+                showMenu = false;
+            }
+
+        }
+    </script>
+
+
     <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
     <script src="../dist/js/main.js"></script>
 </body>
+
 </html>
